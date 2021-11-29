@@ -1,0 +1,535 @@
+/*font*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@800&family=Gloria+Hallelujah&family=Source+Code+Pro:wght@600&display=swap');
+
+body {
+    height: 400vw;
+    -webkit-overflow-scrolling: touch;
+    
+    background: #ffff;
+    transition: background .5s;
+}
+
+/* world */
+.world {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    perspective: 1000px;
+}
+.stage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    transform-style: preserve-3d;
+}
+.house {
+    width: 100vw;
+    height: 100vh;
+    transform: translateZ(-490vw);
+    transform-style: preserve-3d;
+    
+}
+.wall {
+    /*모든벽, 왼쪽 오른쪽 다가오는 벽들*/
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.8);
+}
+.wall-left {
+    width: 1000vw;
+    background: #292F38;
+    transform: rotateY(90deg) translateZ(-500vw);
+}
+.wall-right {
+    width: 1000vw;
+    background: #292F38;
+    transform: rotateY(90deg) translateZ(-400vw);
+}
+
+/*Wall-front-a*/
+.wall-front-a { 
+    transform: translateZ(480vw);
+    background-color:rgba(0, 0, 0, 0.3);
+    z-index:1;
+}
+
+.wall-content-a {
+    position:absolute;
+    left:0;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.introduction_img{
+    width: 100vw; 
+    height: 100vh;
+    margin-right: 2vw;
+    z-index: 1;
+}
+
+.introduction_img_layer {
+    background-color: rgba(255, 255, 255, 0.6);
+    z-index:2;
+}
+
+/* Wall-front-a Title*/
+.title {
+    display: flex;
+	align-items: center;
+	justify-content: center;
+    width:100vw;
+    height:50vh;
+	text-align: center;
+    transform: translateZ(490vw);
+    font-family: 'Fira Sans', sans-serif;
+    color: #292F38; 
+    font-weight: 100;
+    z-index:3;
+    position: absolute;
+    top:40vh;
+}
+
+.introduction_content{
+    transform: translateZ(490vw);
+    width:100vw;
+    height:100vh;
+}
+
+.introduction_icon_container{
+    transform: translateZ(490vw);
+    width:100vw;
+    height:50vh;
+    display: flex;
+	align-items: center;
+	justify-content: center;
+    z-index:3;
+    top:15vh;
+    position:absolute;
+}
+
+.logo_icon{
+    width:200px;
+    height:200px;
+}
+
+/*Wall-front-a Arrow*/
+/* .scrollDown {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+    width:100vw;
+	text-align: center;
+	
+	bottom: 20vh;
+    transform: translateZ(490vw);
+    font-family: 'Open Sans', sans-serif;
+    font-size: vw;
+    color: #511281; 
+    z-index:3;
+} */
+
+.arrows {
+	width:100vw;
+    position: absolute;
+    align-items: center;
+	bottom: 1.5vh;
+    transform: translateZ(490vw);
+    left: 48%; 
+    z-index:3;
+
+}
+
+.arrows path {
+	stroke: #511281;
+	fill: transparent;
+	stroke-width: 1px;	
+	animation: arrow 2s infinite;
+	-webkit-animation: arrow 2s infinite; 
+}
+
+@keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+.arrows path.a1 {
+	animation-delay:-1s;
+	-webkit-animation-delay:-1s; 
+}
+
+.arrows path.a2 {
+	animation-delay:-0.5s;
+	-webkit-animation-delay:-0.5s; 
+}
+
+.arrows path.a3 {	
+	animation-delay:0s;
+	-webkit-animation-delay:0s; 
+}
+
+/*Wall-front-b - about me*/
+.wall-front-b { 
+    transform: translateZ(280vw); 
+    width:100vw;
+    height: 100vh;
+}
+
+.aboutMe_contents {
+    transform: translateZ(300vw); 
+    width:100vw;
+    height: 100vh;
+}
+
+.wall-content-b{
+    width:100vw;
+    height: 100vh;
+}
+
+.wall-content-b, .aboutMe_img, .aboutMe_contents, .aboutMe_layer {
+    position:absolute;
+    left:0;
+    top:0;
+}
+
+.aboutMe_img {
+    z-index: -4;
+    width: 50vw; 
+    height: 100vh;
+}
+
+.aboutMe_text {
+	position: absolute;
+    top:15vh;
+    text-align: center;
+    left:5vw;
+    width:50vw;
+    height:100vh;
+    font-size: 2vw;
+    z-index: 0;
+}
+.aboutMe_text h1 {
+    color: #292F38; 
+    font-family: 'Gloria Hallelujah', cursive;
+    font-weight: bold;
+}
+
+.aboutMe_layer{
+    z-index: -3;
+    width: 50vw; 
+    height: 100vh;  
+    background: rgba(141, 141, 141, 0.5);
+}
+
+.profile_img_box {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width:100vw;
+    height: 100vh;
+    overflow:hidden;
+    margin-left: 22vw;
+}
+
+.profile_img {
+    z-index:-1;
+    width:16vw;
+    height: 40vh;
+    border-radius: 50%;
+    
+}
+.profile_img_box_back{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width:100vw;
+    height: 100vh;
+    margin-left: 21.5vw;
+    z-index: -2;
+}
+
+.white_back{
+    width:17vw;
+    height: 41vh;
+    background-color: #ffff;
+    border-radius: 50%;
+}
+
+.aboutMe_description {
+	position: absolute;
+    color:#292F38;
+    width:50vw;
+    height:60vh;
+    font-size: 2vw;
+    z-index: 0;
+    top:0;
+    right:5vw;
+    padding:7vw;
+}
+
+.aboutMe_description_title{ 
+    text-align: center;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.aboutMe_description p {
+    text-align: center;
+    top:15vh;
+    font-size: 1.5vw;
+    z-index: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.aboutMe_description_skills{
+    font-family: 'Fira Sans', sans-serif;
+    text-align: center;
+}
+
+.aboutMe_skills{
+    width: 40vw;
+    height: 20vh;
+}
+
+.aboutMe_skills Button{
+    margin-right: 1vw;
+}
+
+
+
+/*wall-front-c - Experience and Education*/
+.wall-front-c, .wall-content-c { 
+    transform: translateZ(80vw);
+    width: 100vw;
+}
+
+.experience_title{
+    font-family: 'Fira Sans', sans-serif;
+    color:#292F38;
+    font-size:3vw;
+    text-align: center;
+    padding:1vw;
+    height:10vh;
+}
+
+.row {
+    padding: 5vw;
+    width: 100vw;
+}
+
+.experience_cards {
+    margin-top: 2vw;
+}
+
+/*Wall-front-d - my project*/
+.wall-front-d { 
+    transform: translateZ(-120vw); 
+}
+
+.wall-content-d {
+    width: 100vw;
+    height: 100vh;
+}
+
+.slide {
+    width: 90vw;
+    height: 75vh;
+    margin: 2vw 5vw 5vw 5vw;
+}
+
+.project_card {
+  display: flex;
+}
+
+.project-img-container {
+  display: flex;
+  width: 50%;
+}
+ .project_title{
+    font-family: 'Fira Sans', sans-serif;
+    color:#292F38;
+    font-size:3vw;
+    text-align: center;
+    padding:1vw;
+    height:10vh;
+ }
+
+ .card-text{
+    font-weight: bold;
+    font-size: 1.3rem;
+ }
+ .card-content{
+   font-size: 1.3rem;
+ }
+ .card-img {
+    height:75%;
+    padding:2vw;
+ }
+
+ .bcparx {
+   width: 50%;
+   height: 100%;
+ }
+
+ .card-img-overlay{
+    margin: 3vw 0 0 3vw;
+    width: 50%;
+ }
+
+ .project_buttons button{
+    margin-right: 0.5vw;
+    margin-left: 0.5vw;
+    margin-bottom: 1vh;
+    margin-top: 0.5vh;
+}
+
+.project_icons{
+    position: absolute;
+    left: 38vw;
+}
+
+.project_icon{
+    margin-left:2vw;
+}
+
+/*wall-front-e - Reference*/
+.wall-front-e {
+    transform: translateZ(-320vw); 
+}
+
+.wall-content-e {
+    width: 100vw;
+    height: 100vh;
+}
+
+.reference_contents{
+    padding: 2vw;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+iframe{
+  height: 100%;
+  z-index: 0;
+}
+/*Wall-front-f - contact inform*/
+.wall-front-f { 
+    transform: translateZ(-500vw); 
+     background-color: #292F38;
+}
+
+.wall-content-f, .contact_contents {
+     width:100vw;
+    height:100vh;
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+.wall-content-f{
+ z-index: -6;
+}
+
+.contact_contents{
+     z-index: -5;
+    width: 100vw;
+    height: 100vh;
+    transform: translateZ(-490vw);
+}
+
+.contact_title{
+    width:100vw;
+    position:absolute;
+    top:20vh;
+    text-align: center;
+    color: white; 
+    font-family: 'Gloria Hallelujah', cursive;
+    font-weight: bold;
+    font-size:5vw;
+}
+
+.conatct_email{
+    width:100vw;
+    position:absolute;
+    top:50vh;
+    font-size: 2vw;
+    text-align: center;
+    font-family: 'Fira Sans', sans-serif;
+    color:white;
+}
+
+.contact_icons_package{
+    width:100vw;
+    position:absolute;
+    top:60vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 5vh;
+}
+
+.contact_icons{
+    font-size:5vw;
+    margin-right:1vw;
+    margin-left:1vw;
+}
+
+.contact_deadEndImg{
+    display:flex;
+    align-items: center;
+    position:absolute;
+    left:10vw;
+    bottom:10vh;
+}
+.deadEndImg{
+    width:20vw;
+}
+
+.wall-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.wall-title {
+    font-size: 5rem;
+}
+
+/*progress bar container*/
+.progress-bar-con {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    
+    height: 5px;
+    background: #555;
+}
+
+/*progress bar*/
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background: #00a8ff;
+}
+
