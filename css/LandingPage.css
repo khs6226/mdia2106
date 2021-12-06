@@ -146,7 +146,14 @@ body {
     transform: translateZ(490vw);
     left: 48%; 
     z-index:3;
+}
 
+.scroll {
+  position: absolute;
+  left: 46.5%;
+  z-index:3;
+  bottom: 7vh;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 .arrows path {
@@ -230,7 +237,7 @@ body {
 }
 .aboutMe_text h1 {
     color: #292F38; 
-    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'Fira Sans', sans-serif;
     font-weight: bold;
 }
 
@@ -462,7 +469,7 @@ iframe{
     top:20vh;
     text-align: center;
     color: white; 
-    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'Fira Sans', sans-serif;
     font-weight: bold;
     font-size:5vw;
 }
@@ -480,7 +487,7 @@ iframe{
 .contact_icons_package{
     width:100vw;
     position:absolute;
-    top:60vh;
+    top:54vh;
     display:flex;
     align-items: center;
     justify-content: center;
